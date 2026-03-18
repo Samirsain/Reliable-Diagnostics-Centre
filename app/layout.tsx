@@ -1,23 +1,22 @@
 import type { Metadata } from 'next'
-import { Libre_Baskerville, Outfit, Noto_Sans_Devanagari } from 'next/font/google'
+import { Inter, Outfit, Noto_Sans_Devanagari } from 'next/font/google'
 import './globals.css'
-
-const baskerville = Libre_Baskerville({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-display',
-  style: ['normal', 'italic'],
-})
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-display',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
 })
 
 const devanagari = Noto_Sans_Devanagari({
   subsets: ['devanagari'],
-  weight: ['300', '400', '500'],
+  weight: ['400', '500', '700'],
   variable: '--font-hindi',
 })
 
@@ -50,7 +49,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
       </head>
-      <body className={`${baskerville.variable} ${outfit.variable} ${devanagari.variable} antialiased selection:bg-primary/30 selection:text-primary overflow-x-hidden pb-16 lg:pb-0`}>
+      <body className={`${outfit.variable} ${inter.variable} ${devanagari.variable} font-body antialiased selection:bg-primary/30 selection:text-primary overflow-x-hidden pb-16 lg:pb-0`}>
         {children}
         <MobileBottomBar />
         <a
