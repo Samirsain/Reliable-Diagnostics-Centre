@@ -11,7 +11,7 @@ import Packages    from '@/components/sections/Packages'
 import FAQ         from '@/components/sections/FAQ'
 import Gallery     from '@/components/sections/Gallery'
 import Reviews     from '@/components/sections/Reviews'
-import CTA         from '@/components/sections/CTA'
+import HomeCollectionBanner from '@/components/sections/HomeCollection'
 import Contact     from '@/components/sections/Contact'
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar'
@@ -31,7 +31,7 @@ export default function Home() {
       <FAQ />
       <Gallery />
       <Reviews />
-      <CTA />
+      <HomeCollectionBanner />
       <Contact />
       <Footer />
       <FloatingWhatsApp />

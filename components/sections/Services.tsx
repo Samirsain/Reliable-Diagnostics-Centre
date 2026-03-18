@@ -38,7 +38,7 @@ const SERVICES = [
     desc: 'HIV, Hepatitis, TORCH, Dengue, Malaria, Widal panels.',
   },
   {
-    icon: 'microscope',
+    icon: 'coronavirus',
     title: 'Microbiology & Culture Tests',
     desc: 'Urine/blood cultures, antibiotic sensitivity, stool exam.',
   },
