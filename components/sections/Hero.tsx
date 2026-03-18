@@ -53,7 +53,7 @@ export default function Hero() {
             Reliable Diagnostics Centre focuses on evaluating current and future health through advanced clinical testing and precise reporting.
           </motion.p>
 
-          <motion.div variants={fadeUpItem} className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-4">
+          <motion.div variants={fadeUpItem} className="hero-btns flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-4">
             <Button size="hero" className="w-full sm:w-auto font-display font-semibold tracking-wide">
               <a href="#contact" className="flex items-center gap-2">
                 Book a Test

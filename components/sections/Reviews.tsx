@@ -34,7 +34,7 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
+      <div className="reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16, maxWidth: 1100, margin: "0 auto" }}>
         {reviews.map((r) => (
           <div key={r.name} style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 14, padding: 22, display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

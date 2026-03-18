@@ -246,3 +246,15 @@
 .circle-mask {
   clip-path: circle(50% at 50% 50%);
 }
+
+/* Packages, Reviews, Stats — mobile fix */
+@media (max-width: 768px) {
+  .packages-grid   { grid-template-columns: 1fr !important; }
+  .reviews-grid    { grid-template-columns: 1fr !important; }
+  .stats-grid      { 
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; 
+  }
+  .hero-btns       { flex-direction: column !important; width: 100% !important; }
+  .hero-btns > *   { width: 100% !important; }
+}

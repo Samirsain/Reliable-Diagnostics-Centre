@@ -45,7 +45,7 @@ export default function HealthPackages() {
         Curated checkup plans for different age groups and clinical needs
       </p>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, maxWidth: 1000, margin: "0 auto" }}>
+      <div className="packages-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20, maxWidth: 1000, margin: "0 auto" }}>
         {packages.map((pkg) => (
           <div
             key={pkg.name}

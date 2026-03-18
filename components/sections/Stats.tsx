@@ -121,9 +121,9 @@ export default function StatsCounter() {
       <h2 style={{ textAlign: "center", fontSize: "1.75rem", fontWeight: 800, color: "#0a2540", marginBottom: 48 }}>
         Numbers That Speak for Themselves
       </h2>
-      <div className="flex flex-col lg:flex-row shadow-[0_4px_20px_rgba(0,0,0,0.03)]" style={{ borderRadius: 16, border: "1px solid #e8f0fb", overflow: "hidden", maxWidth: 960, margin: "0 auto" }}>
+      <div className="stats-grid flex flex-col lg:flex-row shadow-[0_4px_20px_rgba(0,0,0,0.03)]" style={{ borderRadius: 16, border: "1px solid #e8f0fb", overflow: "hidden", maxWidth: 960, margin: "0 auto" }}>
         {stats.map((stat, i) => (
-          <div key={stat.id} className={`flex-1 border-b lg:border-b-0 ${i < stats.length - 1 ? 'lg:border-r border-[#e8f0fb]' : ''}`}>
+          <div key={stat.id} className={`flex-1 border-b lg:border-b-0 ${i % 2 === 0 ? 'border-r border-[#e8f0fb]' : 'lg:border-r border-[#e8f0fb]'} ${i === stats.length - 1 ? 'border-r-0' : ''}`}>
             <StatItem stat={stat} started={started} />
           </div>
         ))}
