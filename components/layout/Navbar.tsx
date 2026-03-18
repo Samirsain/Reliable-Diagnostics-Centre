@@ -75,7 +75,7 @@ export default function Navbar() {
             4.9 (46 reviews)
           </Badge>
           
-          <Link href="#contact" className="hidden lg:block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary/20 tracking-wide">
+          <Link href="/book-test" className="hidden lg:block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary/20 tracking-wide">
             Book a Test
           </Link>
 
@@ -127,7 +127,7 @@ export default function Navbar() {
                         WhatsApp us
                       </a>
                     </div>
-                    <Link href="#contact" className="block w-full bg-slate-900 text-white text-center py-5 rounded-[2rem] font-semibold uppercase tracking-[0.15em] text-sm shadow-xl shadow-slate-200">
+                    <Link href="/book-test" className="block w-full bg-slate-900 text-white text-center py-5 rounded-[2rem] font-semibold uppercase tracking-[0.15em] text-sm shadow-xl shadow-slate-200">
                       Book a Test Now
                     </Link>
                   </div>

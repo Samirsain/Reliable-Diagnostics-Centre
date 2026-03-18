@@ -18,7 +18,7 @@ const CheckIcon = () => (
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" style={{ background: "#f0f6ff", padding: "56px 48px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <section id="reviews" className="premium-section" style={{ background: "#f0f6ff", padding: "56px 0", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <div style={{ textAlign: "center", marginBottom: 40 }}>
         <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#0a74d4", marginBottom: 10 }}>
           Patient Feedback

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 // ✏️  Add your real photos here — replace src with actual image paths
 const galleryItems = [
@@ -53,7 +54,7 @@ export default function GallerySection() {
 
   return (
     <>
-      <section style={{ background: "#0a2540", padding: "56px 48px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <section className="premium-section" style={{ background: "#0a2540", padding: "56px 0", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
         <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#38b6ff", textAlign: "center", marginBottom: 10 }}>
           Our Facility
         </div>
@@ -147,12 +148,12 @@ export default function GallerySection() {
 
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: 32 }}>
-          <a
-            href="#contact"
+          <Link
+            href="/book-test"
             style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "transparent", border: "1.5px solid rgba(255,255,255,.2)", color: "#fff", fontSize: ".82rem", fontWeight: 600, padding: "12px 28px", borderRadius: 9, textDecoration: "none" }}
           >
             Book a Visit →
-          </a>
+          </Link>
         </div>
       </section>
 

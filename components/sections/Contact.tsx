@@ -35,7 +35,7 @@ const infoCards = [
 
 export default function MapSection() {
   return (
-    <section id="contact" style={{ background: "#fff", padding: "56px 48px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <section id="contact" className="premium-section" style={{ background: "#fff", padding: "56px 0", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#0a74d4", textAlign: "center", marginBottom: 10 }}>
         Find Us
       </div>

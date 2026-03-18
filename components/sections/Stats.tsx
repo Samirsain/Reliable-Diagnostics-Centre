@@ -80,22 +80,22 @@ const stats = [
 function StatItem({ stat, started }: { stat: any, started: boolean }) {
   const value = useCountUp(stat.target, stat.duration, started, stat.isDecimal ?? false);
   return (
-    <div style={{
+    <div className="px-3 sm:px-6" style={{
       display: "flex", flexDirection: "column", alignItems: "center",
-      padding: "32px 24px", borderRight: "1px solid #e8f0fb", flex: 1,
+      paddingTop: 32, paddingBottom: 32, borderRight: "1px solid #e8f0fb", flex: 1,
     }}>
       <div style={{
-        width: 52, height: 52, background: "#eef5ff", borderRadius: 14,
+        width: 48, height: 48, background: "#eef5ff", borderRadius: 14,
         display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16,
       }}>
         {stat.icon}
       </div>
-      <div style={{ fontSize: "2.6rem", fontWeight: 800, color: "#0a2540", lineHeight: 1, marginBottom: 6, letterSpacing: "-.02em" }}>
+      <div className="text-[1.8rem] sm:text-[2.6rem]" style={{ fontWeight: 800, color: "#0a2540", lineHeight: 1, marginBottom: 6, letterSpacing: "-.02em" }}>
         {stat.isDecimal ? value.toFixed(1) : value.toLocaleString()}
         <span style={{ color: "#0a74d4" }}>{stat.suffix}</span>
       </div>
-      <div style={{ fontSize: ".9rem", fontWeight: 700, color: "#0a2540", marginBottom: 4 }}>{stat.label}</div>
-      <div style={{ fontSize: ".78rem", color: "#6b7d99", textAlign: "center", lineHeight: 1.55, maxWidth: 120 }}>{stat.sub}</div>
+      <div style={{ fontSize: ".85rem", fontWeight: 700, color: "#0a2540", marginBottom: 4 }}>{stat.label}</div>
+      <div style={{ fontSize: ".72rem", color: "#6b7d99", textAlign: "center", lineHeight: 1.55, maxWidth: 120 }}>{stat.sub}</div>
     </div>
   );
 }
@@ -114,7 +114,7 @@ export default function StatsCounter() {
   }, []);
 
   return (
-    <section ref={ref} style={{ background: "#fff", padding: "56px 48px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <section ref={ref} className="premium-section" style={{ background: "#fff", padding: "56px 0", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <div style={{ textAlign: "center", marginBottom: 10, fontSize: ".65rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#0a74d4" }}>
         Our Track Record
       </div>

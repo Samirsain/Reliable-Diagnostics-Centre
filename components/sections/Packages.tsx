@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const packages = [
   {
     name: "Full Body Health",
@@ -34,7 +36,7 @@ const CheckIcon = () => (
 
 export default function HealthPackages() {
   return (
-    <section id="packages" style={{ background: "#fff", padding: "56px 48px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <section id="packages" className="premium-section" style={{ background: "#fff", padding: "56px 0", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <div style={{ textAlign: "center", marginBottom: 10, fontSize: ".65rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#0a74d4" }}>
         Health Packages
       </div>
@@ -90,8 +92,8 @@ export default function HealthPackages() {
               ))}
             </div>
 
-            <a
-              href="#contact"
+            <Link
+              href="/book-test"
               style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
                 padding: 11, borderRadius: 9,
@@ -101,7 +103,7 @@ export default function HealthPackages() {
               }}
             >
               Book Now →
-            </a>
+            </Link>
           </div>
         ))}
       </div>

@@ -55,10 +55,10 @@ export default function Hero() {
 
           <motion.div variants={fadeUpItem} className="hero-btns flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-4">
             <Button size="hero" className="w-full sm:w-auto font-display font-semibold tracking-wide">
-              <a href="#contact" className="flex items-center gap-2">
+              <Link href="/book-test" className="flex items-center gap-2">
                 Book a Test
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
-              </a>
+              </Link>
             </Button>
             <Button size="hero" variant="outline" className="w-full sm:w-auto font-display font-semibold tracking-wide">
               <a href="#services">Our Services</a>
@@ -67,7 +67,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Hero Image Section */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end w-full max-w-full overflow-hidden">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={{ 
@@ -79,15 +79,15 @@ export default function Hero() {
               duration: 0.8,
               ease: "easeOut"
             }}
-            className="relative"
+            className="relative max-w-full"
           >
-            <div className="relative z-10 w-full max-w-[420px]">
+            <div className="relative z-10 w-full max-w-full sm:max-w-[420px]">
               <Image 
                 src={IMAGES.heroDoctor} 
                 alt="Doctor" 
                 width={600} 
                 height={600} 
-                className="w-full h-auto object-contain drop-shadow-2xl"
+                className="w-full h-auto object-contain drop-shadow-2xl max-w-full"
                 style={{
                   WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
                   maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
@@ -99,7 +99,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5 }}
-                className="absolute top-[18%] left-[2%] w-16 animate-bounce-subtle"
+                className="absolute top-[10%] left-2 w-16 animate-bounce-subtle"
               >
                 <Image 
                   src={IMAGES.floatingIcon} 
@@ -114,7 +114,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7 }}
-                className="absolute bottom-[20%] right-[0%] bg-white p-4 lg:p-6 rounded-full shadow-2xl flex items-center justify-center gap-2 border-2 border-white"
+                className="absolute bottom-[20%] right-2 bg-white p-4 lg:p-6 rounded-full shadow-2xl flex items-center justify-center gap-2 border-2 border-white"
               >
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 <p className="text-xs lg:text-sm font-bold text-slate-800 whitespace-nowrap">NABL Certified Lab</p>

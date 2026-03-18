@@ -9,17 +9,16 @@ export default function HomeCollectionBanner() {
   const badges = ["7 Days a Week", "7 AM – 10 AM Slots", "Sterile Kits", "Free in City"];
 
   return (
-    <section style={{
+    <section className="premium-section" style={{
       background: "#0a2540",
-      padding: "64px 48px",
+      padding: "64px 0",
       fontFamily: "'Plus Jakarta Sans', sans-serif",
       position: "relative",
       overflow: "hidden",
     }}>
-      <div style={{
+      <div className="home-collection-grid" style={{
         maxWidth: 1100, margin: "0 auto",
-        display: "grid", gridTemplateColumns: "1fr 1fr",
-        gap: 64, alignItems: "center",
+        alignItems: "center",
       }}>
 
         {/* Left */}
