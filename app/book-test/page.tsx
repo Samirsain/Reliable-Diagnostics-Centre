@@ -61,8 +61,9 @@ export default function BookingPage() {
 
   if (submitted) {
     return (
-      <div style={{ minHeight: "100vh", background: "#f0f6ff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Plus Jakarta Sans', sans-serif", padding: 24 }}>
-        <div style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 20, padding: "48px 40px", maxWidth: 480, width: "100%", textAlign: "center" }}>
+      <div style={{ minHeight: "100vh", background: "#f0f6ff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Plus Jakarta Sans', sans-serif", padding: 16 }}>
+        <style dangerouslySetInnerHTML={{ __html: `.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }` }} />
+        <div style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 20, padding: "32px 24px", maxWidth: 480, width: "100%", textAlign: "center" }}>
           <div style={{ width: 64, height: 64, background: "#dcfce7", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
             <Check size={28} />
           </div>
@@ -111,34 +112,34 @@ export default function BookingPage() {
       </div>
 
       {/* Progress */}
-      <div style={{ background: "#fff", borderBottom: "1px solid #e4edf8", padding: "0 32px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center" }}>
+      <div style={{ background: "#fff", borderBottom: "1px solid #e4edf8", padding: "0 16px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", overflowX: "auto" }} className="no-scrollbar">
           {[{ n: 1, label: "Select Tests" }, { n: 2, label: "Your Details" }, { n: 3, label: "Confirm" }].map((s, i) => (
             <div key={s.n} style={{ display: "flex", alignItems: "center", flex: i < 2 ? 1 : 0 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "16px 0", cursor: step > s.n ? "pointer" : "default" }} onClick={() => step > s.n && setStep(s.n)}>
                 <div style={{
-                  width: 28, height: 28, borderRadius: "50%",
+                  width: 24, height: 24, borderRadius: "50%",
                   background: step > s.n ? "#0a74d4" : step === s.n ? "#0a74d4" : "#e4edf8",
                   color: step >= s.n ? "#fff" : "#94a3b8",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: ".72rem", fontWeight: 800, flexShrink: 0,
+                  fontSize: ".65rem", fontWeight: 800, flexShrink: 0,
                   transition: "all .2s",
                 }}>
-                  {step > s.n ? <Check size={13} /> : s.n}
+                  {step > s.n ? <Check size={11} /> : s.n}
                 </div>
-                <span style={{ fontSize: ".78rem", fontWeight: 600, color: step >= s.n ? "#0a2540" : "#94a3b8", whiteSpace: "nowrap" }}>{s.label}</span>
+                <span style={{ fontSize: ".72rem", fontWeight: 600, color: step >= s.n ? "#0a2540" : "#94a3b8", whiteSpace: "nowrap" }}>{s.label}</span>
               </div>
-              {i < 2 && <div style={{ flex: 1, height: 1, background: step > s.n + 0 ? "#0a74d4" : "#e4edf8", margin: "0 12px", transition: "background .3s" }} />}
+              {i < 2 && <div style={{ flex: 1, height: 1, background: step > s.n + 0 ? "#0a74d4" : "#e4edf8", margin: "0 8px", transition: "background .3s", minWidth: 20 }} />}
             </div>
           ))}
         </div>
       </div>
 
       {/* Body */}
-      <div style={{ maxWidth: 1000, margin: "0 auto", padding: "28px 24px", display: "grid", gridTemplateColumns: "1fr 320px", gap: 24, alignItems: "start" }}>
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] gap-6" style={{ maxWidth: 1000, margin: "0 auto", padding: "20px 16px", alignItems: "start" }}>
 
         {/* LEFT */}
-        <div>
+        <div className="order-1 md:order-none">
 
           {/* ── STEP 1 ── */}
           {step === 1 && (
@@ -254,12 +255,12 @@ export default function BookingPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 
               {/* Collection type */}
-              <div style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 16, padding: "22px 24px" }}>
-                <h3 style={{ fontSize: ".95rem", fontWeight: 800, color: "#0a2540", marginBottom: 14 }}>Collection Type</h3>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 16, padding: "16px 20px" }}>
+                <h3 style={{ fontSize: ".95rem", fontWeight: 800, color: "#0a2540", marginBottom: 12 }}>Collection Type</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {COLLECTION.map((c) => (
                     <div key={c} onClick={() => setCollectionType(c)} style={{
-                      padding: "14px 16px", borderRadius: 10, cursor: "pointer",
+                      padding: "12px 14px", borderRadius: 10, cursor: "pointer",
                       border: `2px solid ${collectionType === c ? "#0a74d4" : "#e4edf8"}`,
                       background: collectionType === c ? "#f0f7ff" : "#fff",
                       display: "flex", alignItems: "center", gap: 10, transition: "all .15s",
@@ -438,7 +439,7 @@ export default function BookingPage() {
         </div>
 
         {/* RIGHT — Summary */}
-        <div style={{ position: "sticky", top: 20 }}>
+        <div className="md:sticky md:top-20 order-none md:order-1">
           <div style={{ background: "#fff", border: "1px solid #e4edf8", borderRadius: 16, overflow: "hidden" }}>
             <div style={{ background: "#0a2540", padding: "18px 20px" }}>
               <div style={{ fontSize: ".65rem", fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: "#38b6ff", marginBottom: 4 }}>Booking Summary</div>
