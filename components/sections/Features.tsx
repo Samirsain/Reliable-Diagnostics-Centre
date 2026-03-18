@@ -22,7 +22,7 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 -mt-6 sm:-mt-8 lg:-mt-12 relative z-20">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pt-12 sm:pt-16 lg:pt-20 relative z-20">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
         {FEATURES.map((feature, i) => (
           <motion.div 

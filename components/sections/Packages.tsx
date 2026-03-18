@@ -27,7 +27,7 @@ export default function Packages() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row justify-between items-center sm:items-end gap-10 mb-12 lg:mb-20 text-white text-center lg:text-left">
           <div className="space-y-4 lg:space-y-6">
-            <h2 className="text-3xl lg:text-5xl font-black leading-tight uppercase">
+            <h2 className="text-3xl lg:text-5xl font-bold leading-tight uppercase">
               Specialized Health <br /> Packages for You
             </h2>
           </div>
@@ -56,9 +56,9 @@ export default function Packages() {
               <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6 lg:mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined text-3xl lg:text-4xl">{pkg.icon}</span>
               </div>
-              <h4 className="text-lg lg:text-xl font-black mb-3 lg:mb-4 text-slate-900 uppercase tracking-tight">{pkg.title}</h4>
+              <h4 className="text-lg lg:text-xl font-semibold mb-3 lg:mb-4 text-slate-900 uppercase tracking-tight">{pkg.title}</h4>
               <p className="text-slate-500 text-sm leading-relaxed mb-6 lg:mb-8">{pkg.desc}</p>
-              <Link href="#contact" className="text-primary font-black border-b border-primary text-[10px] uppercase tracking-widest hover:text-slate-900 hover:border-slate-900 transition-colors mt-auto">
+              <Link href="#contact" className="text-primary font-semibold border-b border-primary text-[10px] uppercase tracking-[0.15em] hover:text-slate-900 hover:border-slate-900 transition-colors mt-auto font-display">
                 Book Now
               </Link>
             </motion.div>

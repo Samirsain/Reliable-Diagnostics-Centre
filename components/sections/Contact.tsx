@@ -127,16 +127,12 @@ export default function Contact() {
     <section id="contact" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-[1px] bg-primary hidden sm:block" />
-            <span className="text-[0.65rem] sm:text-[0.68rem] tracking-[0.25em] uppercase text-primary font-bold">Get In Touch</span>
-            <div className="w-8 h-[1px] bg-primary hidden sm:block" />
-          </div>
-          <h2 className="text-3xl lg:text-5xl font-black text-slate-900 leading-tight uppercase mb-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs lg:text-sm mb-3">Get In Touch</p>
+          <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight uppercase">
             Visit Us or <span className="text-primary italic">Book a Test</span>
           </h2>
-          <div className="lg:hidden">
+          <div className="lg:hidden mt-10">
             <ContactDock />
           </div>
         </div>
@@ -150,18 +146,18 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 p-4 lg:p-5 rounded-2xl border border-slate-100 bg-slate-50/30 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all group"
+                className="premium-card p-5 lg:p-6 flex items-start gap-5 group"
               >
-                <div className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <span className="material-symbols-outlined text-xl">{block.icon}</span>
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined text-xl font-bold">{block.icon}</span>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-slate-900 text-xs lg:text-sm font-black uppercase tracking-wider mb-1">{block.title}</h3>
-                  <p className="text-slate-500 text-xs lg:text-sm leading-relaxed font-medium whitespace-pre-line">{block.desc}</p>
+                  <h3 className="text-slate-900 text-[10px] lg:text-xs font-bold uppercase tracking-[0.1em] mb-1.5">{block.title}</h3>
+                  <p className="text-slate-600 text-sm lg:text-base leading-relaxed font-medium whitespace-pre-line">{block.desc}</p>
                   {block.link && (
-                    <a href={block.link} target="_blank" rel="noopener noreferrer" className="text-primary text-[10px] lg:text-xs font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+                    <a href={block.link} target="_blank" rel="noopener noreferrer" className="text-primary text-xs font-bold mt-2.5 inline-flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4">
                       {block.linkLabel}
-                      <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </a>
                   )}
                 </div>
@@ -172,42 +168,42 @@ export default function Contact() {
               href="https://wa.me/917737774617?text=नमस्ते%2C%20मुझे%20RDC%20हनुमानगढ़%20में%20टेस्ट%20बुक%20करना%20है"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 lg:py-5 rounded-2xl hover:bg-[#1ebe5d] transition-colors font-bold text-sm shadow-xl shadow-[#25D366]/20"
+              className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-5 lg:py-6 rounded-3xl hover:bg-[#1ebe5d] transition-all font-bold text-sm shadow-2xl shadow-[#25D366]/30 uppercase tracking-wider mt-2 group"
             >
-              <span className="material-symbols-outlined">chat</span>
+              <span className="material-symbols-outlined group-hover:rotate-12 transition-transform">chat</span>
               Chat on WhatsApp
             </a>
           </div>
 
           <div className="order-1 lg:order-2 lg:col-span-3">
-            <div className="bg-white/60 backdrop-blur-3xl border border-white/40 rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-12 relative overflow-hidden shadow-2xl shadow-blue-900/5">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -mr-32 -mt-32 animate-pulse" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-300/20 rounded-full blur-[80px] -ml-32 -mb-32" />
+            <div className="premium-card p-6 sm:p-8 lg:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32 animate-pulse" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-300/10 rounded-full blur-[80px] -ml-32 -mb-32" />
 
               <div className="relative z-10">
-                <div className="mb-8 text-center lg:text-left">
-                  <h3 className="text-xl lg:text-2xl font-black text-slate-950 uppercase mb-1">
-                    Send an Enquiry
+                <div className="mb-10 text-center lg:text-left">
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 uppercase mb-2 tracking-tight">
+                    Quick Booking
                   </h3>
-                  <p className="text-slate-600 text-xs lg:text-sm font-semibold opacity-80">We'll get back to you within the hour.</p>
+                  <p className="text-slate-500 text-sm font-semibold opacity-90">Please share your details for a callback.</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:gap-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="name" className="text-[10px] text-slate-500 uppercase tracking-widest font-black ml-1">Full Name</label>
-                      <input required type="text" id="name" placeholder="Your name"
-                        className="bg-white/40 border border-white/60 text-slate-900 placeholder:text-slate-400 rounded-xl px-5 py-3.5 lg:py-4 text-base sm:text-sm focus:bg-white/70 focus:border-primary focus:outline-none transition-all w-full shadow-sm backdrop-blur-sm" />
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6 lg:gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="name" className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold ml-1">Full Name</label>
+                      <input required type="text" id="name" placeholder="E.g. Rahul Sharma"
+                        className="bg-slate-50 border-transparent text-slate-900 placeholder:text-slate-300 rounded-2xl px-6 py-4 text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary/30 focus:outline-none transition-all w-full" />
                     </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="phone" className="text-[10px] text-slate-500 uppercase tracking-widest font-black ml-1">Phone</label>
-                      <input required type="tel" id="phone" placeholder="10-digit number"
-                        className="bg-white/40 border border-white/60 text-slate-900 placeholder:text-slate-400 rounded-xl px-5 py-3.5 lg:py-4 text-base sm:text-sm focus:bg-white/70 focus:border-primary focus:outline-none transition-all w-full shadow-sm backdrop-blur-sm" />
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="phone" className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold ml-1">Phone</label>
+                      <input required type="tel" id="phone" placeholder="98765 43210"
+                        className="bg-slate-50 border-transparent text-slate-900 placeholder:text-slate-300 rounded-2xl px-6 py-4 text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary/30 focus:outline-none transition-all w-full" />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="test" className="text-[10px] text-slate-500 uppercase tracking-widest font-black ml-1">Test / Package</label>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="test" className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold ml-1">Test / Package</label>
                     <GlassSelect 
                       options={TEST_OPTIONS} 
                       value={selectedTest} 
@@ -215,15 +211,15 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="message" className="text-[10px] text-slate-500 uppercase tracking-widest font-black ml-1">Notes (Optional)</label>
-                    <textarea id="message" placeholder="Doctor's reference, home address..." rows={3}
-                      className="bg-white/40 border border-white/60 text-slate-900 placeholder:text-slate-400 rounded-xl px-5 py-3.5 lg:py-4 text-base sm:text-sm focus:bg-white/70 focus:border-primary focus:outline-none transition-all resize-none w-full shadow-sm backdrop-blur-sm" />
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="message" className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold ml-1">Notes (Optional)</label>
+                    <textarea id="message" placeholder="Special requirements or address..." rows={3}
+                      className="bg-slate-50 border-transparent text-slate-900 placeholder:text-slate-300 rounded-2xl px-6 py-4 text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary/30 focus:outline-none transition-all resize-none w-full" />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-14 sm:h-16 mt-2 tracking-widest text-sm font-black uppercase flex items-center justify-center gap-3 rounded-full shadow-2xl shadow-primary/20 group">
-                    Send Request
-                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg lg:text-xl">arrow_forward</span>
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-16 sm:h-20 mt-4 tracking-[2px] text-sm font-bold uppercase flex items-center justify-center gap-3 rounded-full shadow-2xl shadow-primary/30 group font-display">
+                    Send Booking Request
+                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-xl">arrow_forward</span>
                   </Button>
 
                   {success && (

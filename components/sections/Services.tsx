@@ -8,58 +8,49 @@ import { useReveal, staggerContainer, fadeUpItem } from '@/hooks/useReveal'
 
 const SERVICES = [
   {
-    num: '01',
+    icon: 'biotech',
     title: 'Complete Blood Count & Biochemistry',
     desc: 'Haematology panels, ESR, blood grouping, and full metabolic profiling.',
-    image: IMAGES.stock1,
   },
   {
-    num: '02',
+    icon: 'medication',
     title: 'Thyroid & Hormone Profiling',
     desc: 'T3, T4, TSH, FSH, LH, Testosterone, Oestrogen, Cortisol panels.',
-    image: IMAGES.labEquipment,
   },
   {
-    num: '03',
+    icon: 'water_drop',
     title: 'Liver & Kidney Function Tests',
     desc: 'LFT, KFT, uric acid, creatinine clearance, hepatitis markers.',
-    image: IMAGES.stock2,
   },
   {
-    num: '04',
+    icon: 'monitor_heart',
     title: 'Cardiac & Lipid Risk Panel',
     desc: 'Lipid profile, troponin, CRP, homocysteine, cardiovascular biomarkers.',
-    image: IMAGES.stock3,
   },
   {
-    num: '05',
+    icon: 'bloodtype',
     title: 'Diabetes & Glucose Monitoring',
     desc: 'HbA1c, fasting glucose, OGTT, insulin levels, diabetic risk.',
-    image: IMAGES.stock1,
   },
   {
-    num: '06',
+    icon: 'vaccines',
     title: 'Viral & Immunology Serology',
     desc: 'HIV, Hepatitis, TORCH, Dengue, Malaria, Widal panels.',
-    image: IMAGES.stock4,
   },
   {
-    num: '07',
+    icon: 'microscope',
     title: 'Microbiology & Culture Tests',
     desc: 'Urine/blood cultures, antibiotic sensitivity, stool exam.',
-    image: IMAGES.stock1,
   },
   {
-    num: '08',
+    icon: 'science',
     title: 'Urine & Stool Analysis',
     desc: 'Routine urinalysis, occult blood, ova & parasite identification.',
-    image: IMAGES.stock2,
   },
   {
-    num: '09',
+    icon: 'inventory_2',
     title: 'Health Packages & Profiles',
     desc: 'Full Body, Senior Citizen, Women\'s Health, Executive packages.',
-    image: IMAGES.happyPatient,
   },
 ]
 
@@ -74,7 +65,7 @@ export default function Services() {
             <span className="w-8 h-[2px] bg-primary"></span>
             Our Specialities
           </div>
-          <h2 className="text-3xl lg:text-5xl font-black leading-tight text-slate-900 uppercase">
+          <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-slate-900 uppercase">
             Comprehensive Diagnostic Solutions
           </h2>
           <p className="text-slate-600 text-base lg:text-lg max-w-2xl mx-auto lg:mx-0">
@@ -95,7 +86,7 @@ export default function Services() {
               </div>
             ))}
           </div>
-          <Link href="#contact" className="inline-block bg-primary hover:bg-primary/90 text-white px-8 lg:px-10 py-4 rounded-full text-base lg:text-lg font-bold transition-all shadow-xl shadow-primary/30">
+          <Link href="#contact" className="inline-block bg-primary hover:bg-primary/90 text-white px-8 lg:px-10 py-4 rounded-full text-base lg:text-lg font-semibold transition-all shadow-xl shadow-primary/30 font-display tracking-wide">
             Book a Test
           </Link>
         </div>
@@ -112,24 +103,31 @@ export default function Services() {
       </div>
 
       {/* Grid of 9 Cards - Rule 7 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {SERVICES.map((svc, i) => (
-          <div key={i}
-               className="p-6 lg:p-8 border-b border-slate-100 sm:[&:nth-child(odd)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+7)]:border-b-0 bg-white hover:bg-primary/[0.02] transition-all group">
-            <span className="text-primary/40 text-xs font-black tracking-widest uppercase mb-3 block">
-              {svc.num}
-            </span>
-            <h3 className="font-bold text-base lg:text-lg text-slate-900 mb-2 leading-snug group-hover:text-primary transition-colors">
+          <motion.div 
+            key={i}
+            variants={fadeUpItem}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+            className="premium-card p-8 group overflow-hidden"
+          >
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-2xl">{svc.icon}</span>
+            </div>
+            <h3 className="font-bold text-lg lg:text-xl text-slate-900 mb-3 leading-snug group-hover:text-primary transition-colors">
               {svc.title}
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-4">
+            <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-2">
               {svc.desc}
             </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="text-[10px] px-2 py-1 bg-slate-50 text-slate-400 rounded-md font-bold uppercase tracking-wider">Premium Lab</span>
-              <span className="text-[10px] px-2 py-1 bg-primary/5 text-primary rounded-md font-bold uppercase tracking-wider">Verified</span>
-            </div>
-          </div>
+            <Link href="#contact" className="inline-flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-wider group/link">
+              Learn More
+              <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -34,7 +34,7 @@ function FAQItem({ faq, isOpen, toggle }: { faq: typeof FAQS[0], isOpen: boolean
         onClick={toggle}
         className="flex items-center justify-between w-full py-5 lg:py-6 text-left group transition-all"
       >
-        <span className={`text-sm lg:text-base font-bold transition-colors ${isOpen ? 'text-primary' : 'text-slate-800'}`}>
+        <span className={`text-sm lg:text-base font-semibold transition-colors ${isOpen ? 'text-primary' : 'text-slate-800'}`}>
           {faq.q}
         </span>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-primary text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'}`}>
@@ -74,7 +74,7 @@ export default function FAQ() {
             <span className="text-[0.65rem] sm:text-[0.68rem] tracking-[0.25em] uppercase text-primary font-bold">Frequently Asked</span>
             <div className="w-8 h-[1px] bg-primary hidden sm:block" />
           </div>
-          <h2 className="text-3xl lg:text-4xl font-black text-slate-900 leading-tight uppercase">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight uppercase">
             Common <span className="text-primary italic">Questions</span>
           </h2>
         </div>

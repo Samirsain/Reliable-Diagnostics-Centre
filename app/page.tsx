@@ -1,6 +1,7 @@
 import Navbar      from '@/components/layout/Navbar'
 import Footer      from '@/components/layout/Footer'
 import Hero        from '@/components/sections/Hero'
+import TrustStrip  from '@/components/sections/TrustStrip'
 import Ticker      from '@/components/sections/Ticker'
 import Stats       from '@/components/sections/Stats'
 import Features    from '@/components/sections/Features'
@@ -12,12 +13,16 @@ import Gallery     from '@/components/sections/Gallery'
 import Reviews     from '@/components/sections/Reviews'
 import CTA         from '@/components/sections/CTA'
 import Contact     from '@/components/sections/Contact'
+import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
+import { MobileBottomBar } from '@/components/layout/MobileBottomBar'
+import { BackToTop } from '@/components/ui/BackToTop'
 
 export default function Home() {
   return (
     <main className="bg-white font-body antialiased selection:bg-primary/30 selection:text-primary">
       <Navbar />
       <Hero />
+      <TrustStrip />
       <Features />
       <Stats />
       <Services />
@@ -29,6 +34,9 @@ export default function Home() {
       <CTA />
       <Contact />
       <Footer />
+      <FloatingWhatsApp />
+      <MobileBottomBar />
+      <BackToTop />
     </main>
   )
 }

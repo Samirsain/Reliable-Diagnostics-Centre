@@ -43,11 +43,14 @@ export default function Navbar() {
             <img src="/logo.svg" alt="Reliable Diagnostics Logo" className="w-full h-full" />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-[0.85rem] sm:text-[0.92rem] font-black text-slate-900 tracking-[0.01em] uppercase">
-              Reliable <span className="hidden sm:inline">Diagnostics Centre</span><span className="sm:hidden">Diagnostics</span>
+            <span className="text-[0.85rem] sm:text-[0.92rem] font-bold text-slate-900 tracking-[0.05em] uppercase font-display">
+              Reliable Diagnostics <span className="font-medium text-[0.75rem] lowercase tracking-normal">Centre</span>
             </span>
             <span className="text-[0.6rem] sm:text-[0.65rem] text-primary tracking-[0.02em] font-bold">
               रिलायबल सेंटर · हनुमानगढ़
+            </span>
+            <span className="text-[0.55rem] text-slate-400 font-medium tracking-tight mt-0.5 whitespace-nowrap hidden sm:block">
+              Trusted by 10,000+ Patients
             </span>
           </div>
         </Link>
@@ -58,7 +61,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-slate-600 hover:text-primary transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-primary transition-colors tracking-wide"
             >
               {link.name}
             </Link>
@@ -72,7 +75,7 @@ export default function Navbar() {
             4.9 (46 reviews)
           </Badge>
           
-          <Link href="#contact" className="hidden lg:block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20">
+          <Link href="#contact" className="hidden lg:block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary/20 tracking-wide">
             Book a Test
           </Link>
 
@@ -105,7 +108,7 @@ export default function Navbar() {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-lg font-bold text-slate-800 p-4 bg-white border border-slate-100 rounded-2xl hover:text-primary transition-colors flex justify-between items-center group"
+                        className="text-lg font-medium text-slate-800 p-4 bg-white border border-slate-100 rounded-2xl hover:text-primary transition-colors flex justify-between items-center group tracking-wide"
                       >
                         {link.name}
                         <span className="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
@@ -124,7 +127,7 @@ export default function Navbar() {
                         WhatsApp us
                       </a>
                     </div>
-                    <Link href="#contact" className="block w-full bg-slate-900 text-white text-center py-5 rounded-[2rem] font-black uppercase tracking-widest text-sm shadow-xl shadow-slate-200">
+                    <Link href="#contact" className="block w-full bg-slate-900 text-white text-center py-5 rounded-[2rem] font-semibold uppercase tracking-[0.15em] text-sm shadow-xl shadow-slate-200">
                       Book a Test Now
                     </Link>
                   </div>

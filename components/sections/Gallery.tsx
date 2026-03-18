@@ -1,4 +1,7 @@
+"use client"
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { IMAGES } from '@/constants/images'
 
 export default function Gallery() {
@@ -12,16 +15,20 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-      <div className="space-y-4 mb-10">
-        <p className="text-primary font-bold uppercase tracking-widest text-sm">Our Facility</p>
-        <h2 className="text-4xl font-black text-slate-900 uppercase">A Glimpse into Excellence</h2>
+      <div className="text-center mb-10 sm:mb-16">
+        <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs lg:text-sm mb-2">Our Facility</p>
+        <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 uppercase">A Glimpse into Excellence</h2>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {images.map((img, i) => (
-          <div 
+          <motion.div 
             key={i} 
-            className="aspect-square relative overflow-hidden rounded-[2.5rem] shadow-xl group"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="aspect-square relative overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-xl group premium-card"
           >
             <Image 
               src={img.src} 
@@ -29,8 +36,10 @@ export default function Gallery() {
               fill 
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+            <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <p className="text-white text-xs font-bold uppercase tracking-widest">{img.alt}</p>
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>

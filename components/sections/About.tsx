@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { IMAGES } from '@/constants/images'
 
@@ -8,7 +9,8 @@ export default function About() {
   return (
     <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
       <div className="flex-1 relative w-full max-w-sm lg:max-w-none mx-auto">
-        <div className="w-[200px] h-[200px] lg:w-[450px] lg:h-[450px] bg-sky-100/50 absolute -top-5 -left-5 lg:-top-10 lg:-left-10 rounded-full -z-10"></div>
+        {/* Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-[80px] -z-10" />
         <div className="relative">
           <div className="w-full aspect-square lg:w-[500px] lg:h-[500px] relative overflow-hidden circle-mask shadow-2xl">
             <Image 
@@ -35,8 +37,8 @@ export default function About() {
           <span className="w-8 h-[2px] bg-primary"></span>
           About us
         </div>
-        <h2 className="text-3xl lg:text-5xl font-black leading-tight text-slate-900">
-          We’re an Enterprising Medical Diagnostics Center
+        <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-slate-900 uppercase">
+          Empowering Health with <span className="text-primary italic">Expert Diagnostics</span>
         </h2>
         <div className="space-y-4 lg:space-y-6 text-slate-600 text-base lg:text-lg leading-relaxed">
           <p>
@@ -47,10 +49,10 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-          <button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 lg:px-10 py-4 rounded-full text-base lg:text-lg font-bold transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-3">
+          <Link href="#contact" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 lg:px-10 py-4 rounded-full text-base font-semibold transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-3 tracking-wide font-display">
             Read More 
             <span className="material-symbols-outlined">arrow_forward</span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

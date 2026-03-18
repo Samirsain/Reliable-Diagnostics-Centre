@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "About Us", href: "#about" },
   { label: "Packages", href: "#packages" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ]
@@ -26,101 +26,86 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#020617] text-slate-400 relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+    <footer className="bg-[#020617] text-gray-400 pt-16 pb-8 font-body relative">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* Column 1 - Logo */}
+        <div>
+          <h2 className="text-white text-2xl font-bold tracking-wide font-display">
+            RELIABLE <br /> DIAGNOSTICS
+          </h2>
+          <p className="text-sky-400 text-sm mt-1 lowercase font-medium">centre</p>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-12 pb-8">
-        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-12 lg:gap-8 text-center lg:text-left">
-          
-          {/* Column 1: Brand (Span 2) - Order 1 */}
-          <div className="lg:col-span-2 space-y-6 lg:space-y-8 order-1">
-            <Link href="/" className="inline-flex items-center gap-3 group justify-center lg:justify-start">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500">
-                <img src="/logo.svg" alt="Reliable Diagnostics" className="w-8 h-8 lg:w-9 lg:h-9" />
-              </div>
-              <div className="flex flex-col leading-tight text-left">
-                <span className="text-white text-lg lg:text-xl font-black tracking-tighter uppercase block">
-                  Reliable <span className="text-primary italic">Diagnostics</span>
-                </span>
-                <span className="text-[0.6rem] lg:text-[0.65rem] text-slate-500 font-bold tracking-[0.2em] uppercase">
-                  Hanumangarh Centre
-                </span>
-              </div>
-            </Link>
-            
-            <p className="text-xs lg:text-sm leading-relaxed max-w-xs mx-auto lg:mx-0 text-slate-400/80 font-medium">
-              Hanumangarh's most trusted diagnostic lab, providing accurate results with advanced laboratory sciences at your doorstep.
-            </p>
-            
-            <div className="flex gap-3 justify-center lg:justify-start">
-              <a href="https://wa.me/917737774617" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:border-transparent transition-all duration-300 transform hover:-translate-y-1">
-                <span className="material-symbols-outlined text-xl">chat</span>
-              </a>
-              <a href="tel:07737774617" 
-                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 transform hover:-translate-y-1">
-                <span className="material-symbols-outlined text-xl">call</span>
-              </a>
-              <a href="https://maps.google.com/?q=Reliable+Diagnostics+Centre+Hanumangarh" target="_blank" rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-slate-700 hover:text-white hover:border-transparent transition-all duration-300 transform hover:-translate-y-1">
-                <span className="material-symbols-outlined text-xl">pin_drop</span>
-              </a>
-            </div>
-          </div>
+          <p className="mt-4 text-sm leading-relaxed max-w-xs text-gray-400 font-medium">
+            Hanumangarh's most trusted diagnostic lab, providing accurate results with advanced laboratory services.
+          </p>
 
-          {/* Column 2: Contact - Order 2 on Mobile */}
-          <div className="space-y-6 order-2">
-            <h4 className="text-white text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] mb-4 lg:mb-8">Contact</h4>
-            <div className="space-y-4 lg:space-y-6">
-              <div className="space-y-1 lg:space-y-2">
-                <p className="text-[9px] lg:text-[10px] text-primary font-black uppercase tracking-widest">Phone</p>
-                <a href="tel:07737774617" className="text-base lg:text-lg font-black text-white hover:text-primary transition-colors block">
-                  077377 74617
-                </a>
-              </div>
-              <div className="space-y-1 lg:space-y-2">
-                <p className="text-[9px] lg:text-[10px] text-primary font-black uppercase tracking-widest">Address</p>
-                <p className="text-xs lg:text-sm leading-relaxed text-slate-400 font-semibold px-4 lg:px-0">
-                  Bharat Mata Chowk, Puran Nagar<br />
-                  Hanumangarh, Rajasthan 335513
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 3: Explore - Order 3 */}
-          <div className="space-y-6 order-3">
-            <h4 className="text-white text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] mb-4 lg:mb-8 text-center lg:text-left">Explore</h4>
-            <ul className="flex flex-wrap justify-center lg:flex-col lg:items-start gap-x-6 gap-y-3">
-              {LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-xs lg:text-sm font-semibold hover:text-white transition-all duration-300 text-slate-500 uppercase tracking-wider">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Popular Tests - Order 4 (Hidden on very small screens or compact) */}
-          <div className="space-y-6 order-4 hidden sm:block">
-            <h4 className="text-white text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] mb-4 lg:mb-8">Popular Tests</h4>
-            <ul className="space-y-3 lg:space-y-4">
-              {POPULAR_TESTS.slice(0, 5).map((test) => (
-                <li key={test}>
-                  <Link href="#services" className="text-xs lg:text-sm font-semibold hover:text-primary transition-colors inline-block text-slate-500">
-                    {test}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <Link href="#contact" className="inline-block mt-5 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-sky-400 text-white rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+            Book a Test →
+          </Link>
         </div>
 
+        {/* Column 2 - Contact */}
+        <div>
+          <h3 className="text-sky-400 text-xs tracking-[2px] uppercase font-semibold mb-4 font-display">
+            Contact
+          </h3>
+
+          <p className="text-sm mb-1 uppercase tracking-wider text-gray-500 text-[10px] font-bold">Phone</p>
+          <a href="tel:07737774617" className="text-white text-xl font-bold mb-5 block hover:text-sky-400 transition-colors">
+            077377 74617
+          </a>
+
+          <p className="text-sm mb-1 uppercase tracking-wider text-gray-500 text-[10px] font-bold">Address</p>
+          <p className="text-sm leading-relaxed font-medium">
+            Bharat Mata Chowk, Puran Nagar <br />
+            Hanumangarh, Rajasthan 335513
+          </p>
+        </div>
+
+        {/* Column 3 - Links */}
+        <div>
+          <h3 className="text-sky-400 text-xs tracking-[2px] uppercase font-semibold mb-4 font-display">
+            Explore
+          </h3>
+
+          <ul className="space-y-3 text-sm">
+            {LINKS.map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="hover:text-sky-400 transition-all transform hover:translate-x-1 inline-block font-medium text-gray-400"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Column 4 - Tests */}
+        <div>
+          <h3 className="text-sky-400 text-xs tracking-[2px] uppercase font-semibold mb-4 font-display">
+            Popular Tests
+          </h3>
+
+          <ul className="space-y-3 text-sm">
+            {POPULAR_TESTS.slice(0, 5).map((test) => (
+              <li key={test}>
+                <Link
+                  href="#services"
+                  className="hover:text-sky-400 transition-all transform hover:translate-x-1 inline-block font-medium text-gray-400"
+                >
+                  {test}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/5 mt-16 pt-6 text-center text-sm text-gray-500 font-medium">
+        © {currentYear} Reliable Diagnostics Centre — Built with care 💙
       </div>
     </footer>
   );

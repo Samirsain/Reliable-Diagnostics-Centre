@@ -1,52 +1,50 @@
 "use client"
 
+import { motion } from 'framer-motion'
 import { useCountUp } from '@/hooks/useCountUp'
 
+const STATS = [
+  { label: 'Google Rating', count: 4.9, suffix: '', icon: 'star' },
+  { label: 'Happy Patients', count: 10000, suffix: '+', icon: 'groups' },
+  { label: 'Tests Available', count: 200, suffix: '+', icon: 'science' },
+  { label: 'Report Turnaround', count: 24, suffix: 'h', icon: 'speed' },
+]
+
 export default function Stats() {
-  const reviewsCount = useCountUp(46, 2000)
-  const testsCount = useCountUp(200, 2500)
-  const turnaroundCount = useCountUp(24, 1500)
+  const stat1 = useCountUp(4.9, 2000)
+  const stat2 = useCountUp(10000, 2500)
+  const stat3 = useCountUp(200, 2000)
+  const stat4 = useCountUp(24, 1500)
+
+  const counts = [stat1, stat2, stat3, stat4]
 
   return (
-    <section className="border-b border-slate-100 bg-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-slate-100 divide-y lg:divide-y-0">
-        <div className="py-8 px-6 text-center space-y-2">
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-none">
-            4.9
-          </h3>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            Google Star Rating
-          </p>
-        </div>
-
-        <div ref={reviewsCount.ref} className="py-10 px-6 text-center space-y-2">
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-none">
-            {reviewsCount.count}
-          </h3>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            Verified Reviews
-          </p>
-        </div>
-
-        <div ref={testsCount.ref} className="py-10 px-6 text-center space-y-2 border-t sm:border-t-0">
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-none">
-            {testsCount.count}+
-          </h3>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            Tests Available
-          </p>
-        </div>
-
-        <div ref={turnaroundCount.ref} className="py-10 px-6 text-center space-y-2">
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-none">
-            {turnaroundCount.count}h
-          </h3>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            Report Turnaround
-          </p>
+    <section className="py-20 px-4 sm:px-6 lg:px-16 bg-gradient-to-b from-white to-slate-50/50">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {STATS.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              ref={counts[i].ref}
+              className="premium-card p-6 sm:p-10 text-center flex flex-col items-center group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-3xl font-bold">{stat.icon}</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 tracking-tight">
+                {counts[i].count}{stat.suffix}
+              </h3>
+              <p className="text-[10px] sm:text-[11px] text-slate-500 font-bold uppercase tracking-[0.2em]">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-
   )
 }
